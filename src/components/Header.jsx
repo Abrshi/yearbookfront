@@ -17,13 +17,14 @@ export default function Header() {
 
   const studentLinks = [
     { href: "/", label: "Home" },
-    { href: "/student", label: "Student" },
+    { href: "/student", label: "Year Book" },
     { href: "/student/new", label: "New" },
     { href: "/student/profile", label: "Profile" },
   ];
 
   const adminLinks = [
     { href: "/", label: "Home" },
+    { href: "/student", label: "Year Book" },
     { href: "/admin", label: "Admin" },
     { href: "/admin/profile", label: "Profile" },
   ];
@@ -43,7 +44,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10 flex-1 justify-center">
+        <nav className="hidden top-0 md:flex items-center gap-10 flex-1 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -62,7 +63,7 @@ export default function Header() {
             <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
               <FaUserCircle className="text-3xl text-purple-600" />
               <span className="text-gray-700 font-medium">
-                {user.name || "User"}
+                {user.fullName || "User"}
               </span>
             </div>
           ) : (
@@ -101,12 +102,12 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className="flex flex-col mt-6 space-y-2">
+        <nav className="flex flex-col space-y-2 bg-purple-100">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="px-6 py-3 text-gray-700 hover:bg-purple-100 rounded-lg font-medium transition"
+              className="px-6 py-3 text-gray-700 hover:bg-purple-300 bg-purple-200 rounded-lg font-medium transition"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

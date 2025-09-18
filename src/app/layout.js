@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         {/* ✅ Put Header inside the provider */}
         <AuthProvider>
           <Header />
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
         </AuthProvider>
       </body>
     </html>

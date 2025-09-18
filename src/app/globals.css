@@ -9,7 +9,6 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* only block X if needed */
@@ -17,7 +16,6 @@ body {
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 
 
 }
@@ -46,7 +44,9 @@ body {
 /* Wrapper for pages that need the animated circles */
 .bg-blobs {
   @apply relative flex items-center justify-center overflow-hidden
-    bg-gradient-to-tr from-[#0f0c29] via-[#302b63] to-[#24243e];
+        /* bg-gradient-to-tr from-[#e2e2e2] via-[#68639b] to-[#dedeff]; */
+        bg-gradient-to-tr from-[#6a89a7] via-[#bdddc7] to-[#88bdf2];
+
 }
 
 

@@ -46,7 +46,7 @@ export default function CurrentUser() {
   const { profile, photos } = data;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 pt-30">
+    <div className="max-w-[100vw] mx-auto px-6 py-12">
       {/* Album Section - Now on Top */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -60,7 +60,7 @@ export default function CurrentUser() {
             No photos uploaded yet.
           </p>
         ) : (
-          <div className="rounded-3xl shadow-2xl overflow-hidden border border-gray-200 bg-white/40 backdrop-blur-xl">
+          <div className="rounded-3xl shadow-2xl overflow-hidden border border-gray-200 bg-white/40 backdrop-blur-xl ">
             <Swiper
               modules={[Navigation, Pagination]}
               navigation
@@ -74,7 +74,7 @@ export default function CurrentUser() {
                   <motion.img
                     src={photo.url}
                     alt={`Photo ${photo.id}`}
-                    className="w-full h-[500px] object-cover mx-auto rounded-3xl"
+                    className="w-auto h-[80vh] object-cover mx-auto rounded-3xl"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.4 }}
                   />
@@ -94,26 +94,26 @@ export default function CurrentUser() {
       >
         {/* Gradient background */}
         
-        <div className="relative flex">
-          <h2 className="">
-            {profile.user.fullName}
-          </h2>
-          <p className="text-lg text-white-800 font-medium mt-2">
-            {profile.department?.name || "No department"}
-          </p>
-          
-          <div>
-           <p className="mt-4 text-gray-700 italic max-w-2xl mx-auto leading-relaxed">
-            {profile.profileQuote || "“No quote yet”"}
-           </p>
-              <p className="mt-4 text-white-800 max-w-2xl mx-auto leading-relaxed">
-                {profile.description || "No description available."}
-              </p>
+       <div className="relative p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-xl shadow-xl text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              {profile.user?.fullName || "Anonymous"}
+            </h2>
+
+            <p className="text-lg text-gray-600 font-medium mt-1">
+              {profile.department?.name || "No department"}
+            </p>
+          <div className="mt-6 flex gap-6">
+            <p className="mt-4 text-xl italic text-yellow-700 max-w-2xl mx-auto">
+              {profile.profileQuote || "“No quote yet”"}
+            </p>
+
+            <p className="mt-4 text-amber-900 max-w-2xl mx-auto leading-relaxed">
+              {profile.description || "No description available."}
+            </p>
+
+           
+            </div>
           </div>
-          <div className="absolute top-4 right-4 text-sm text-white-600 bg-white/70 backdrop-blur-md px-3 py-1 rounded-full shadow">
-            Status: {profile.approvalStatus}
-          </div>
-        </div>
       </motion.div>
     </div>
   );
