@@ -68,7 +68,7 @@ export default function Yearbook({
   return (
     <div className="space-y-6">
       {showAllProfiles && (
-        <div className="flex flex-col sm:flex-row gap-3 mb-4">
+        <div className="flex flex-col sm:flex-row gap-3 mb-4 max-w-64">
           {/* Search input */}
           <input
             type="text"
@@ -97,7 +97,7 @@ export default function Yearbook({
       )}
 
       {/* Responsive Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-10">
         {displayProfiles.map((p) => (
           <div
             key={p.id}
